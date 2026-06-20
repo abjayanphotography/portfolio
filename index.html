@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Abjayan Photography — Contact Sheet</title>
+<meta name="description" content="Documentary and analog photography by Abjayan, a 15-year-old photographer from Chennai working on 35mm film across rural India." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" />
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#0a0a0a;color:#ededed;font-family:"Inter",system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  button{font:inherit;color:inherit}
+  .wrap{max-width:1400px;margin:0 auto;padding:40px 24px}
+  @media(min-width:1024px){.wrap{padding:56px 40px}}
+  header{margin-bottom:48px}
+  @media(min-width:1024px){header{margin-bottom:64px}}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8a8a8a;margin:0}
+  h1{margin:16px 0 0;font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;letter-spacing:-.02em;font-size:2.25rem}
+  @media(min-width:1024px){h1{font-size:3.75rem}}
+  h1 .it{font-style:italic;color:#8a8a8a}
+  .intro{margin:24px 0 0;max-width:42rem;font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;color:#cfcfcf;font-size:1rem;line-height:1.7}
+  @media(min-width:1024px){.intro{font-size:1.125rem}}
+  .grid{display:grid;gap:24px;grid-template-columns:repeat(2,1fr)}
+  @media(min-width:768px){.grid{grid-template-columns:repeat(3,1fr)}}
+  @media(min-width:1024px){.grid{grid-template-columns:repeat(4,1fr);gap:32px}}
+  .tile{background:none;border:0;padding:0;text-align:left;cursor:zoom-in;display:block;width:100%}
+  .frame{overflow:hidden;background:#141414;aspect-ratio:4/5}
+  .frame img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+  .tile:hover .frame img{transform:scale(1.03)}
+  .bw{filter:grayscale(1)}
+  .cap{margin-top:12px;display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .loc{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:15px;color:#cfcfcf}
+  .yr{font-family:"JetBrains Mono",monospace;font-size:11px;color:#8a8a8a;letter-spacing:.1em}
+  footer{margin-top:64px;padding-top:32px;border-top:1px solid #2a2a2a}
+  .lb{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.95);display:flex;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+  @media(min-width:1024px){.lb{padding:40px}}
+  .lb figure{margin:0;max-width:92vw;max-height:88vh;display:flex;flex-direction:column;align-items:center}
+  .lb img{max-width:100%;max-height:80vh;object-fit:contain}
+  .lb figcaption{margin-top:20px;display:flex;align-items:baseline;gap:16px}
+  .lb figcaption .loc{font-size:18px;color:#ededed}
+  .lb figcaption .yr{font-size:11px;letter-spacing:.12em}
+  .lb .x{position:absolute;top:20px;right:24px;background:none;border:0;cursor:pointer;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;color:#ededed}
+  .lb .nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;cursor:pointer;color:#ededed;font-size:2rem;padding:16px}
+  .lb .prev{left:16px}.lb .next{right:16px}
+  @media(min-width:1024px){.lb .prev{left:32px}.lb .next{right:32px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Contact Sheet — Abjayan</p>
+    <h1>Abjayan <span class="it">— field archive</span></h1>
+    <p class="intro">I'm Abjayan, a 15-year-old documentary photographer from Chennai. My work is primarily shot on 35mm film. I began photography in 2022, beginning with wildlife photography. Sometime last year, I decided to take 10 days to shoot a photo project across Rural Bengal. Since then I've decided to focus on documentary photography.</p>
+  </header>
+  <div class="grid" id="grid"></div>
+  <footer></footer>
+</div>
+<script>
+const photos = [
+  {url:"https://i.postimg.cc/k9Zxtdjx/700.jpg",location:"Tawang Monastery, Arunachal Pradesh",year:2026},
+  {url:"https://i.postimg.cc/xnzLvF7z/709.jpg",location:"Tawang Monastery, Arunachal Pradesh",year:2026},
+  {url:"https://i.postimg.cc/pvsQRjzC/748.jpg",location:"Tawang Monastery, Arunachal Pradesh",year:2026},
+  {url:"https://i.postimg.cc/65r7DFxK/751.jpg",location:"Tawang Monastery, Arunachal Pradesh",year:2026},
+  {url:"https://i.postimg.cc/yBSDt3PJ/1266.jpg",location:"Bomdilla, Arunachal Pradesh",year:2026},
+  {url:"https://i.postimg.cc/PXv5g01c/P2390408.jpg",location:"Mago, Arunachal Pradesh",year:2026},
+  {url:"https://i.postimg.cc/NfChfjck/000003350009.jpg",location:"Midnapore, West Bengal",year:2026},
+  {url:"https://i.postimg.cc/tpp9ksvL/000003350022-(1).jpg",location:"Jhargram, West Bengal",year:2026},
+  {url:"https://i.postimg.cc/X44nLrDb/000003310031-(1).jpg",location:"Jhargram, West Bengal",year:2026},
+  {url:"https://i.postimg.cc/bYJfXt77/image.png",location:"West Bengal",year:2026},
+  {url:"https://i.postimg.cc/RS7jJRmH/000003320012.jpg",location:"Deulkunda, West Bengal",year:2026},
+  {url:"https://i.postimg.cc/FNw5q1T7/image.png",location:"Deulkunda, West Bengal",year:2026},
+  {url:"https://i.postimg.cc/8DyZK3Z7/P2340153.jpg",location:"Mettupalayam, Tamil Nadu",year:2025},
+  {url:"https://i.postimg.cc/hgC2yw2f/P2340204.jpg",location:"Mettupalayam, Tamil Nadu",year:2025},
+  {url:"https://i.postimg.cc/YrHP7WW5/abyajan0096.jpg",location:"Chennai, Tamil Nadu",year:2025,bw:true},
+];
+const shuffled = photos.map(p=>[Math.random(),p]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+const grid = document.getElementById('grid');
+shuffled.forEach((p,i)=>{
+  const b=document.createElement('button');
+  b.className='tile';b.type='button';
+  b.innerHTML=`<div class="frame"><img src="${p.url}" alt="${p.location}, ${p.year}" loading="lazy" class="${p.bw?'bw':''}"></div><div class="cap"><span class="loc">${p.location}</span><span class="yr">${p.year}</span></div>`;
+  b.addEventListener('click',()=>openLb(i));
+  grid.appendChild(b);
+});
+let cur=null;
+function openLb(i){cur=i;render();document.body.style.overflow='hidden'}
+function closeLb(){cur=null;const e=document.getElementById('lb');if(e)e.remove();document.body.style.overflow=''}
+function step(d){cur=(cur+d+shuffled.length)%shuffled.length;render()}
+function render(){
+  let el=document.getElementById('lb');
+  if(!el){el=document.createElement('div');el.id='lb';el.className='lb';el.addEventListener('click',closeLb);document.body.appendChild(el)}
+  const p=shuffled[cur];
+  el.innerHTML=`<button class="x" aria-label="Close">CLOSE ✕</button><button class="nav prev" aria-label="Previous">‹</button><button class="nav next" aria-label="Next">›</button><figure><img src="${p.url}" alt="${p.location}, ${p.year}" class="${p.bw?'bw':''}"><figcaption><span class="loc">${p.location}</span><span class="yr">${p.year}</span></figcaption></figure>`;
+  el.querySelector('figure').addEventListener('click',e=>e.stopPropagation());
+  el.querySelector('.x').addEventListener('click',e=>{e.stopPropagation();closeLb()});
+  el.querySelector('.prev').addEventListener('click',e=>{e.stopPropagation();step(-1)});
+  el.querySelector('.next').addEventListener('click',e=>{e.stopPropagation();step(1)});
+}
+document.addEventListener('keydown',e=>{
+  if(cur===null)return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowRight')step(1);
+  if(e.key==='ArrowLeft')step(-1);
+});
+</script>
+</body>
+</html>
